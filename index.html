@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Herbagin | Sirup Herbal Jahe Merah</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+:root{
+
+--primary:#5D2F21;
+--secondary:#8D4B2D;
+--gold:#C88B14;
+--cream:#F8F2E7;
+--green:#4F7F3A;
+--white:#ffffff;
+
+}
+
+body{
+
+background:var(--cream);
+color:var(--primary);
+overflow-x:hidden;
+
+}
+
+/* Background Blur */
+
+body::before{
+
+content:'';
+
+position:fixed;
+
+top:-180px;
+right:-180px;
+
+width:420px;
+height:420px;
+
+background:#d8b04d55;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:'';
+
+position:fixed;
+
+bottom:-180px;
+left:-180px;
+
+width:420px;
+height:420px;
+
+background:#6b944033;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+z-index:-2;
+
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+
+position:fixed;
+
+top:0;
+left:0;
+right:0;
+
+height:70px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 8%;
+
+background:rgba(93,47,33,.95);
+
+backdrop-filter:blur(10px);
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:28px;
+
+font-weight:700;
+
+color:#fff7dc;
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:28px;
+
+list-style:none;
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#ffd66d;
+
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:60px;
+
+padding:120px 8% 70px;
+
+background:linear-gradient(#f7eddc,#f3e3ca);
+
+}
+
+.hero-text{
+
+flex:1;
+
+}
+
+.hero-image{
+
+flex:1;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.hero-image img{
+
+width:300px;
+
+max-width:100%;
+
+animation:float 3s ease-in-out infinite;
+
+filter:drop-shadow(0 20px 35px rgba(0,0,0,.25));
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.badge{
+
+display:inline-block;
+
+background:white;
+
+padding:10px 18px;
+
+border-radius:40px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+font-weight:600;
+
+margin-bottom:25px;
+
+}
+
+.hero h1{
+
+font-size:64px;
+
+margin-bottom:10px;
+
+}
+
+.hero h2{
+
+font-size:30px;
+
+color:var(--secondary);
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+line-height:1.9;
+
+max-width:560px;
+
+color:#6b5247;
+
+}
+
+/* ================= SECTION ================= */
+
+section{
+
+padding:80px 8%;
+
+}
+
+.title{
+
+text-align:center;
+
+font-size:42px;
+
+margin-bottom:15px;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+max-width:700px;
+
+margin:auto;
+
+margin-bottom:45px;
+
+line-height:1.9;
+
+color:#6d574c;
+
+}
+
+/* ================= CARD ================= */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+}
+
+.card{
+
+background:white;
+
+padding:35px;
+
+border-radius:22px;
+
+box-shadow:0 15px 30px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.icon{
+
+width:70px;
+height:70px;
+
+background:#fff4d6;
+
+border-radius:18px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:34px;
+
+margin-bottom:18px;
+
+}
+
+.card p{
+
+line-height:1.8;
+
+color:#666;
+
+}
+
+/* ================= KANDUNGAN ================= */
+
+.ingredients{
+
+background:#efe2c8;
+
+}
+
+.ingrid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+}
+
+.item{
+
+background:white;
+
+padding:30px;
+
+border-radius:22px;
+
+text-align:center;
+
+box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+.circle{
+
+width:90px;
+height:90px;
+
+background:#fff5df;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:40px;
+
+margin:auto;
+
+margin-bottom:15px;
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+nav{
+
+padding:0 20px;
+
+}
+
+.logo{
+
+font-size:22px;
+
+}
+
+nav ul{
+
+display:none;
+
+}
+
+.hero{
+
+flex-direction:column-reverse;
+
+text-align:center;
+
+padding:100px 20px 60px;
+
+gap:30px;
+
+}
+
+.hero-image img{
+
+width:220px;
+
+}
+
+.hero h1{
+
+font-size:44px;
+
+}
+
+.hero h2{
+
+font-size:22px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+margin:auto;
+
+}
+
+section{
+
+padding:60px 20px;
+
+}
+
+.title{
+
+font-size:30px;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.ingrid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+🌿 Herbagin
+</div>
+
+<ul>
+
+<li><a href="#manfaat">Manfaat</a></li>
+
+<li><a href="#kandungan">Kandungan</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<div class="badge">
+🌿 Herbal Alami
+</div>
+
+<h1>Herbagin</h1>
+
+<h2>Sirup Herbal Jahe Merah dengan Madu</h2>
+
+<p>
+
+Perpaduan Jahe Merah dan Madu yang membantu memberikan sensasi hangat pada tubuh,
+membantu meredakan masuk angin, mengurangi rasa mual, serta memberikan rasa nyaman
+untuk aktivitas sehari-hari.
+
+</p>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://cdn.phototourl.com/free/2026-06-28-566e0f77-1a84-49a0-8d5d-b8d9bf394dc8.png" alt="Herbagin">
+
+</div>
+
+</section>
+<!-- ================= MANFAAT ================= -->
+
+<section id="manfaat">
+
+    <h2 class="title">Manfaat Herbagin</h2>
+
+    <p class="subtitle">
+        Herbagin dibuat dari perpaduan Jahe Merah dan Madu yang memberikan sensasi hangat
+        alami sehingga cocok dikonsumsi saat tubuh terasa kurang nyaman.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">🌬️</div>
+
+            <h3>Meredakan Masuk Angin</h3>
+
+            <p>
+                Membantu memberikan rasa nyaman ketika tubuh terasa kurang fit akibat
+                gejala masuk angin sehingga aktivitas tetap berjalan dengan nyaman.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">🤢</div>
+
+            <h3>Membantu Mengurangi Mual</h3>
+
+            <p>
+                Jahe merah telah lama dikenal sebagai tanaman herbal yang secara
+                tradisional digunakan untuk membantu mengurangi rasa mual.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">🔥</div>
+
+            <h3>Menghangatkan Tubuh</h3>
+
+            <p>
+                Memberikan sensasi hangat alami sehingga tubuh terasa lebih nyaman,
+                terutama ketika cuaca dingin atau saat beristirahat.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= KANDUNGAN ================= -->
+
+<section id="kandungan" class="ingredients">
+
+    <h2 class="title">Kandungan Herbal</h2>
+
+    <p class="subtitle">
+        Menggunakan bahan-bahan alami pilihan yang dipadukan menjadi minuman herbal
+        dengan cita rasa yang nikmat.
+    </p>
+
+    <div class="ingrid">
+
+        <div class="item">
+
+            <div class="circle">🫚</div>
+
+            <h4>Jahe Merah</h4>
+
+            <p style="margin-top:10px; line-height:1.8;">
+                Memberikan sensasi hangat alami dan menjadi bahan utama dalam Herbagin.
+            </p>
+
+        </div>
+
+        <div class="item">
+
+            <div class="circle">🍯</div>
+
+            <h4>Madu Alami</h4>
+
+            <p style="margin-top:10px; line-height:1.8;">
+                Memberikan rasa manis alami sehingga minuman herbal terasa lebih nikmat.
+            </p>
+
+        </div>
+
+        <div class="item">
+
+            <div class="circle">🌿</div>
+
+            <h4>Herbal Pilihan</h4>
+
+            <p style="margin-top:10px; line-height:1.8;">
+                Dipilih dari bahan-bahan herbal berkualitas untuk menghasilkan cita rasa
+                yang khas dan alami.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<script>
+
+// ===============================
+// Smooth Scroll
+// ===============================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+    anchor.addEventListener('click',function(e){
+
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+
+            behavior:'smooth'
+
+        });
+
+    });
+
+});
+
+
+// ===============================
+// Animasi Scroll
+// ===============================
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.animate([
+
+{
+opacity:0,
+transform:'translateY(50px)'
+},
+
+{
+opacity:1,
+transform:'translateY(0)'
+}
+
+],{
+
+duration:700,
+fill:'forwards',
+easing:'ease'
+
+});
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+},{
+threshold:.15
+});
+
+document.querySelectorAll('.card,.item,.title,.subtitle,.hero-text,.hero-image').forEach(el=>{
+
+observer.observe(el);
+
+});
+
+
+// ===============================
+// Shadow Navbar
+// ===============================
+
+const navbar=document.querySelector("nav");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>30){
+
+navbar.style.boxShadow="0 12px 25px rgba(0,0,0,.18)";
+
+}else{
+
+navbar.style.boxShadow="none";
+
+}
+
+});
+
+
+// ===============================
+// Hover Card Mobile
+// ===============================
+
+document.querySelectorAll(".card,.item").forEach(card=>{
+
+card.addEventListener("touchstart",()=>{
+
+card.style.transform="translateY(-6px)";
+
+});
+
+card.addEventListener("touchend",()=>{
+
+setTimeout(()=>{
+
+card.style.transform="translateY(0px)";
+
+},120);
+
+});
+
+});
+
+
+// ===============================
+// Fade Hero Saat Load
+// ===============================
+
+window.addEventListener("load",()=>{
+
+document.querySelector(".hero-text").animate([
+
+{
+opacity:0,
+transform:'translateX(-40px)'
+},
+
+{
+opacity:1,
+transform:'translateX(0)'
+}
+
+],{
+
+duration:800,
+fill:'forwards'
+
+});
+
+document.querySelector(".hero-image").animate([
+
+{
+opacity:0,
+transform:'translateX(40px)'
+},
+
+{
+opacity:1,
+transform:'translateX(0)'
+}
+
+],{
+
+duration:900,
+fill:'forwards'
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
